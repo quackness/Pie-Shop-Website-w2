@@ -55,8 +55,23 @@
     </style>
     <script>
       function save() {
+        //create an iteam in the local storage
         localStorage.setItem("applepie", true);
       }
+
+      //when window loads the following function will execute
+      window.onload = function () {
+        //find element
+        let favorite = document.getElementById("favourite");
+        //check if local.storage exists based on the browser
+        if (window.localStorage) {
+          let storage = window.localStorage;
+          if (storage.getItem("applepie") === "true") {
+            //add the text to span with innerHTML
+            favorite.innerHTML = "Apple pie is one of your favourites!";
+          }
+        }
+      };
     </script>
   </head>
   <body>
@@ -77,19 +92,15 @@
 
       <main id="main">
         <h1 style="font-size: 40px; color: #a593c2">Apple pie</h1>
-        <a href="images/products/applepie.jpg" target="_blank"><img src="images/products/applepie.jpg" width="700" alt="apple pie" /></a>
+        <a href="images/products/applepie.jpg" target="_blank"
+          ><img src="images/products/applepie.jpg" width="700" alt="apple pie"
+        /></a>
         <figcaption>Our world famous apple pie</figcaption>
 
         <p>
-          <button onclick="save()" type="button">
-            Save as favourite
-          </button>
-          <span id="favorite"></span>
+          <button onclick="save()" type="button">Save as favourite</button>
+          <span id="favourite"></span>
         </p>
-
-
-
-
 
         <div style="background-color: #f8f4f1">
           <strong>Price: $12.95</strong>
@@ -154,23 +165,26 @@
             <li>If something goes wrong, we start all over again!</li>
           </ol>
           <h3>Ingredients</h3>
-          <p>Please note that this item contains the following items and possible allergens!</p>
-                    <ul>
-                        <li>Butter</li>
-                        <li>Eggs</li>
-                        <li>Sugar</li>
-                        <ul>
-                            <li>Regular sugar</li>
-                            <li>Brown sugar</li>
-                            <li>Caster sugar</li>
-                        </ul>
-                        <li>Flour</li>
-                        <li>Cinnamon</li>
-                        <li>Ginger</li>
-                        <li>Nutmeg</li>
-                        <li>Apples</li>
-                        <li>Lemons</li>
-                    </ul>
+          <p>
+            Please note that this item contains the following items and possible
+            allergens!
+          </p>
+          <ul>
+            <li>Butter</li>
+            <li>Eggs</li>
+            <li>Sugar</li>
+            <ul>
+              <li>Regular sugar</li>
+              <li>Brown sugar</li>
+              <li>Caster sugar</li>
+            </ul>
+            <li>Flour</li>
+            <li>Cinnamon</li>
+            <li>Ginger</li>
+            <li>Nutmeg</li>
+            <li>Apples</li>
+            <li>Lemons</li>
+          </ul>
         </div>
       </main>
       <footer>
