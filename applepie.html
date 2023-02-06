@@ -53,6 +53,11 @@
         width: 100%;
       }
     </style>
+    <script>
+      function save() {
+        localStorage.setItem("applepie", true);
+      }
+    </script>
   </head>
   <body>
     <header id="mainheader">
@@ -74,6 +79,18 @@
         <h1 style="font-size: 40px; color: #a593c2">Apple pie</h1>
         <a href="images/products/applepie.jpg" target="_blank"><img src="images/products/applepie.jpg" width="700" alt="apple pie" /></a>
         <figcaption>Our world famous apple pie</figcaption>
+
+        <p>
+          <button onclick="save()" type="button">
+            Save as favourite
+          </button>
+          <span id="favorite"></span>
+        </p>
+
+
+
+
+
         <div style="background-color: #f8f4f1">
           <strong>Price: $12.95</strong>
           <h2>Description</h2>
